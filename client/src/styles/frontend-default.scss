@@ -1,0 +1,33 @@
+/* ==========================================================================
+   derralf/elemental-textcolumns
+   ========================================================================== */
+
+
+// some default variables.
+// you may comment or change them when using this scss file in your workflow
+
+$grid-gutter-width:         30px !default;
+
+
+
+
+.derralf__elements__textcolumns__element__elementtextcolumnsholder {
+
+    // add space between title ans list when there no content
+    .element__title + .textcolumns-list-wrapper {
+        margin-top: $grid-gutter-width;
+    }
+
+    .textcolumns-list-wrapper {}
+    .textcolumns-list {}
+
+    .textcolumns-item {
+        margin-bottom: $grid-gutter-width;
+    }
+    .textcolumns-item-title {}
+    .textcolumns-item-content {}
+
+}
+
+
+

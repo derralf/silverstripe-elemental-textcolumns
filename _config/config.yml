@@ -1,0 +1,22 @@
+# ---
+# Name: elementaltextcolumns
+# ---
+
+# ## add default styles
+# DNADesign\Elemental\Controllers\ElementController:
+#   default_styles:
+#     # bootstrap 3 example styles
+#     - derralf/elemental-textcolumns:client/dist/styles/frontend-default.css
+#
+
+# Derralf\Elements\Textcolumns\Element\ElementTextColumnsHolder:
+#   # disable StyledTitle
+#   title_tag_variants: null
+#   title_alignment_variants: null
+#   # styles
+#   style_default_description: 'Standard: 3 Spalten'
+#   styles:
+#     TwoColumns: '2 Spalten'
+#     TitleLeftTextRight: 'Titel links, Text rechts'
+# Derralf\Elements\Textcolumns\Model\ElementTextColumnsItem:
+#   readmore_link_class: 'btn btn-primary btn-readmore'
