@@ -5,8 +5,8 @@ namespace Derralf\Elements\Textcolumns\Model;
 
 
 use Derralf\Elements\Textcolumns\Element\ElementTextColumnsHolder;
-use Sheadawson\Linkable\Forms\LinkField;
-use Sheadawson\Linkable\Models\Link;
+use SilverStripe\LinkField\Form\LinkField;
+use SilverStripe\LinkField\Models\Link;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Permission;
 use SilverStripe\Versioned\Versioned;
@@ -47,7 +47,18 @@ class ElementTextColumnsItem extends DataObject
     private static $belongs_many_many = [];
 
     private static $owns = [
+        'ReadMoreLink'
     ];
+
+    private static array $cascade_deletes = [
+        'ReadMoreLink'
+    ];
+
+    private static $cascade_duplicates = [
+        'ReadMoreLink'
+    ];
+
+
 
     private static $defaults = [
     ];
@@ -61,7 +72,7 @@ class ElementTextColumnsItem extends DataObject
         'Content.LimitCharacters' => 'Inhalt',
         'Content'                 => 'Inhalt',
         'ReadMoreLink'            => 'Link',
-        'ReadMoreLink.LinkURL'    => 'Link',
+        'ReadMoreLink.URL'        => 'Link',
         'Sort'                    => 'Sortierung'
     ];
 
@@ -72,7 +83,7 @@ class ElementTextColumnsItem extends DataObject
         $labels['Content']                      = _t(__CLASS__ . '.ContentLabel',      'Content');
         $labels['Content.LimitCharacters']      = _t(__CLASS__ . '.ContentLabel',      'Content');
         $labels['ReadMoreLink']                 = _t(__CLASS__ . '.ReadMoreLinkLabel', 'ReadMoreLink');
-        $labels['ReadMoreLink.LinkURL']         = _t(__CLASS__ . '.ReadMoreLinkLabel', 'ReadMoreLink');
+        $labels['ReadMoreLink.URL']             = _t(__CLASS__ . '.ReadMoreLinkLabel', 'ReadMoreLink');
         $labels['Sort']                         = _t(__CLASS__ . '.SortLabel',         'Sort');
         return $labels;
     }
@@ -81,7 +92,7 @@ class ElementTextColumnsItem extends DataObject
     private static $summary_fields = [
         'Title',
         'Content.LimitCharacters',
-        'ReadMoreLink.LinkURL'
+        'ReadMoreLink.URL'
     ];
 
     private static $searchable_fields = [
@@ -98,9 +109,10 @@ class ElementTextColumnsItem extends DataObject
             // Content
             $fields->dataFieldByName('Content')->setRows(8);
 
-            // ReadMoreLink
-            $ReadMoreLink = LinkField::create('ReadMoreLinkID', 'Link');
+            // ReadMoreLink use Silverstripe Linkfield
+            $ReadMoreLink = LinkField::create('ReadMoreLink', 'Link');
             $fields->replaceField('ReadMoreLinkID', $ReadMoreLink);
+
 
         });
 

@@ -9,8 +9,9 @@
                             <div class="textcolumns-item-content">
                                 $Content
                             </div>
-                            <% if $ReadMoreLink.LinkURL %>
-                            <div class="element__readmorelink"><p><a href="$ReadMoreLink.LinkURL" class="{$ReadmoreLinkClass}" {$ReadMoreLink.TargetAttr} ><% if $ReadMoreLink.Title %>$ReadMoreLink.Title<% else %> mehr<% end_if %></a></p></div>
+                            <%-- silverstripe/linkfield --%>
+                            <% if $ReadMoreLink.URL %>
+                                <div class="element__readmorelink"><p><a href="$ReadMoreLink.URL" class="{$ReadmoreLinkClass}" <% if $ReadMoreLink.OpenInNew %>target="_blank" rel="noopener noreferrer"<% end_if %> ><% if $ReadMoreLink.Title %>$ReadMoreLink.Title<% else %> mehr<% end_if %></a></p></div>
                             <% end_if %>
                         </div>
                     </div>
