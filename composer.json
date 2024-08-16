@@ -11,9 +11,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "dnadesign/silverstripe-elemental": "^4",
-        "silverstripe/vendor-plugin": "^1.0",
-        "sheadawson/silverstripe-linkable": "^2.0@dev"
+        "dnadesign/silverstripe-elemental": "^4 || ^5",
+        "silverstripe/linkfield": "^3"
     },
     "extra": {
         "branch-alias": {
