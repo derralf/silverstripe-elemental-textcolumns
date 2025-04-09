@@ -1,5 +1,5 @@
 
-                <div class="{$ColCss} textcolumns-item grid-list-item">
+                <div class="{$ColCss} textcolumns-item">
 
                     <h3 class="textcolumns-item-title">$Title</h3>
                     <div class="textcolumns-item-content">
